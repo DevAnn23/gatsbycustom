@@ -1,0 +1,16 @@
+@import '../../assets/styles/helpers.scss';
+
+.footer {
+    position: relative;
+    padding: 4rem 0 3.2rem;
+    background-color: $white;
+    overflow: hidden;
+
+    @include media(md) {
+        padding: 6rem 0 3.2rem;
+    }
+
+    @include media(lg) {
+        padding: 6.4rem 0 3.2rem;
+    }
+}

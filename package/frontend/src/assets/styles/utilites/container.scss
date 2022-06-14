@@ -1,0 +1,36 @@
+@import '../mixins/media';
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $container-space-xs;
+    padding-right: $container-space-xs;
+
+    @include media(md) {
+        width: $container-width;
+        padding-left: $container-space-md;
+        padding-right: $container-space-md;
+    }
+
+    @include media(xxxl) {
+        padding: 0;
+    }
+}
+
+.container-full-mobile {
+    margin: 0 -#{$container-space-xs};
+
+    @include media(md) {
+        margin: 0 -#{$container-space-md};
+    }
+
+    @include media-max(md) {
+        max-width: initial;
+    }
+
+    @include media(lg) {
+        margin: 0;
+    }
+}

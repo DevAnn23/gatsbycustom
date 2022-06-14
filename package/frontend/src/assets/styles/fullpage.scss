@@ -1,0 +1,139 @@
+@import '../../assets/styles/helpers.scss';
+
+.section {
+    @include media(lg) {
+        .imagesTransform {
+            &>div {
+                overflow: visible;
+
+                img {
+                    transition: opacity 3s, transform 1s;
+                    transition-delay: 0.1s, 0.1s;
+                    opacity: 0 !important;
+                    transform: translateX(-150vw);
+                }
+
+                &:nth-child(1) img {
+                    transform: translateX(150vw);
+                }
+            }
+
+
+        }
+
+        .contentWrapOpacity {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        &.active {
+            .imagesTransform>div {
+                img {
+                    opacity: 1 !important;
+                    transition-delay: 0s, 0s;
+                    transform: translateX(0%);
+                    transition: opacity 3s, transform 1.3s;
+                }
+
+            }
+
+            .contentWrapOpacity {
+                opacity: 1;
+                transition: opacity 2.5s ease;
+            }
+        }
+    }
+
+    @media screen and (max-height: 700px) and (min-width: 992px) {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+
+        &:last-child {
+            padding-bottom: 0rem;
+        }
+    }
+}
+
+.fpNavbar {
+    background-color: $white;
+    transition-duration: 1.3s;
+    transition-property: background-color;
+
+    @include media(xxl) {
+        transition-delay: 0.5s;
+    }
+
+    header {
+        padding: 1rem 0;
+        transition-delay: 0.1s;
+
+        img,
+        nav a {
+            transition-delay: 0.5s;
+            transition-duration: 0.13s;
+            transition-property: filter;
+
+
+        }
+
+    }
+}
+
+body.fp-viewing-0 {
+    .fpNavbar {
+        background-color: transparent;
+        transition-delay: 0s;
+
+        header {
+            padding: 4.8rem 0;
+            transition: all 0.23s;
+            transition-delay: 0s;
+
+            img,
+            nav a {
+                transition-delay: 0s;
+                filter: brightness(0) invert(1);
+            }
+
+            a[aria-current] {
+                filter: none;
+            }
+
+        }
+    }
+}
+
+footer.showDesktop {
+    display: none;
+
+    @include media(lg) {
+        display: block;
+    }
+}
+
+footer.showMobile {
+    display: block;
+
+    @include media(lg) {
+        display: none;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.fp-enabled .fp-responsive {
+    overflow: auto;
+}
+
+.scrollable-container {
+    &>div {
+        display: flex;
+    }
+
+    .scrollable-content {
+        width: 100%;
+        align-self: flex-end;
+    }
+}

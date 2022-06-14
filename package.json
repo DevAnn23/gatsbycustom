@@ -1,0 +1,10 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Project Name",
+  "scripts": {
+    "install": "cd package/frontend && npm install",
+    "g-build": "cd package/frontend && npm run clean && npm run build"
+  }
+}

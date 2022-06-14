@@ -1,0 +1,108 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    @include primary-font-regular-20;
+    line-height: 2.7rem;
+    color: $violet;
+    padding-top: $body-padding-top;
+
+    @include media-max(md) {
+        padding-top: $body-mobile-padding-top;
+    }
+}
+
+main {
+    min-height: calc(100vh - 10rem - $body-padding-top);
+
+}
+
+.bgDark,
+.page-home {
+    background-color: $violet;
+}
+
+body.opened footer {
+    @include media-max(md) {
+        position: fixed;
+        z-index: 99999;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
+h1 {
+    @include neo-font-bold-34;
+
+    @include media(lg) {
+        @include h1;
+    }
+}
+
+h2 {
+    @include neo-font-bold-28;
+
+    @include media(lg) {
+        @include h2;
+    }
+}
+
+h3 {
+    @include primary-font-black-26;
+
+    @include media(lg) {
+        @include h3;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+.page404 main {
+    min-height: calc(100vh - 10rem);
+    width: 100%;
+    position: relative;
+    margin-top: -$body-padding-top;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media-max(md) {
+        margin-top: -$body-mobile-padding-top;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+a[aria-current] {
+    color: $brand-violet;
+}
+
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alignright {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+figure.alignright {
+    display: flex;
+    justify-content: flex-end;
+}
+
+figure.aligncenter {
+    display: flex;
+    justify-content: center;
+}
